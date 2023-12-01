@@ -9,5 +9,11 @@ package com.mycompany.mavenproject1;
  * @author Aluno
  */
 public class Bioimpedancia {
+    Professor responsavel;
+    Aluno peso;
+    Aluno altura;
+    Aluno massamagra;
+    Aluno gordura;
+    Aluno idadecorporal;
     
 }

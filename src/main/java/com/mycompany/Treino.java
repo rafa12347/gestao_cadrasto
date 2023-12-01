@@ -9,5 +9,9 @@ package com.mycompany.mavenproject1;
  * @author Aluno
  */
 public class Treino {
+    Professor instrutor;
+    String tipodeexercicio;
+    String sequenciadecadatreino;
+    String peso;
     
 }

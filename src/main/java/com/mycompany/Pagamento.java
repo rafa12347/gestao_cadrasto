@@ -4,10 +4,18 @@
  */
 package com.mycompany.mavenproject1;
 
+import java.util.Date;
+
 /**
  *
  * @author Aluno
  */
 public class Pagamento {
+    
+    Date validade;
+    Aluno usuarioapagar;
+    String formadepagamento;
+    
+    
     
 }
