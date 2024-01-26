@@ -1,11 +1,17 @@
+package com.mycompany;
 
-package com.mycompany.mavenproject1;
-import java.util.Date;
+public class Professor extends Pessoa{
 
-public class Professor {
-    String nome;
-    Date nascimento;
-    String formacao;
-    String email;
-    String telefone;
+    private String formacao;
+
+    public String getFormacao() {
+        return formacao;
+    }
+
+    public void setFormacao(String formacao) {
+        this.formacao = formacao;
+    }
+   
+    
+    
 }

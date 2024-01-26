@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.mavenproject1;
+package com.mycompany;
 
 import java.util.Date;
 
@@ -12,9 +12,35 @@ import java.util.Date;
  */
 public class Pagamento {
     
-    Date validade;
-    Aluno usuarioapagar;
-    String formadepagamento;
+    private Date validade;
+    private Aluno usuarioapagar;
+    private String formadepagamento;
+
+    public Date getValidade() {
+        return validade;
+    }
+
+    public void setValidade(Date validade) {
+        this.validade = validade;
+    }
+
+    public Aluno getUsuarioapagar() {
+        return usuarioapagar;
+    }
+
+    public void setUsuarioapagar(Aluno usuarioapagar) {
+        this.usuarioapagar = usuarioapagar;
+    }
+
+    public String getFormadepagamento() {
+        return formadepagamento;
+    }
+
+    public void setFormadepagamento(String formadepagamento) {
+        this.formadepagamento = formadepagamento;
+    }
+    
+    
     
     
     

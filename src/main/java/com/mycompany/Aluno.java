@@ -1,12 +1,18 @@
-
-package com.mycompany.mavenproject1;
-import java.util.Date;
+package com.mycompany;
 
 
-public class Aluno {
-    String nome;
-    Date nascimento;
-    String cpf;
-    String email;
-    String telefone;
+public class Aluno extends Pessoa{
+    private String cpf;
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+    
+    
+    
+   
 }
