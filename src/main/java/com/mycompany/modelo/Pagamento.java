@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany;
+package com.mycompany.modelo;
 
+import com.mycompany.modelo.Aluno;
 import java.util.Date;
 
 /**

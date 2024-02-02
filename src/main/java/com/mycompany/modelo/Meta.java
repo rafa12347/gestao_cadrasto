@@ -1,5 +1,5 @@
 
-package com.mycompany;
+package com.mycompany.modelo;
 
 public class Meta {
     private String objetivoPrincipal;
