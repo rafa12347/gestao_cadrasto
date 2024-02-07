@@ -12,10 +12,21 @@ import java.util.Date;
  */
 public class Pessoa {
     
+    private int id;
     private String nome;
     private Date nascimento;
     private String email;
     private String telefone;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    
 
     public String getNome() {
         return nome;

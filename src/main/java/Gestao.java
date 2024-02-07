@@ -1,4 +1,7 @@
 
+import com.mycompany.modelo.Aluno;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /*
@@ -14,7 +17,7 @@ public class Gestao {
     static Scanner javain = new Scanner(System.in);
 
     public static void main(String[] args) {
-
+        List<Aluno> alunos = new ArrayList<>();
         menu();
         
         int opcao;
@@ -30,35 +33,108 @@ public class Gestao {
                 
                 case 1:
                    System.out.println("***** CADASTRO DE ALUNOS *****");
+                   
+                   javain.nextLine();
+                   Aluno a = new Aluno();
+                   System.out.println("---- CADASTRO DE ALUNO ----");
+                   System.out.println("Digite o id do aluno: ");
+                   a.setId(javain.nextInt());
+                   a.setNome(javain.nextLine());
+                   System.out.println("Digite o nome do aluno: ");
+                   a.setNome(javain.nextLine());
+                   System.out.println("Digite o CPF");
+                   a.setCpf(javain.nextLine());
+                   alunos.add(a);
                    break;
                    
-                case 3:
+                case 2:
                     System.out.println("***** LISTAR ALUNOS *****");
+                    
+                    for (Aluno aluno : alunos) 
+                    {
+                        System.out.println("ID: " + aluno.getId());
+                        System.out.println("Nome: " + aluno.getNome());
+                        System.out.println("CPF: " + aluno.getCpf() + "\n");
+                    }  
                     break;
                     
-                case 4:
+                case 3:
                     System.out.println("***** ALTERAR ALUNO *****");
+                    
+                    System.out.println("Digite a id do aluno: ");
+                    Integer idAluno = javain.nextInt();
+                    Boolean encontrou = false;
+                    
+                    for (Aluno aluno : alunos) {
+                        if (aluno.getId() == idAluno) 
+                        {
+                            javain.nextLine();
+                            System.out.println("Digite o nome: ");
+                            aluno.setNome(javain.nextLine());
+                            System.out.println("Digite o CPF: ");
+                            aluno.setCpf(javain.nextLine());
+                            encontrou = true;
+                        }
+                    }
                     break;
                 
-                case 5:
+                case 4:
                     System.out.println("***** EXCLUIR ALUNO *****");
+                    Integer posicao = buscarAlunoById(alunos);
+                    if(posicao!=null)
+                    {
+                        alunos.remove(alunos.get(posicao));
+                        System.out.println("ALUNO EXCLUÍDO COM SUCESSO!");
+                    }
+                    else
+                    {
+                        System.out.println("ALUNO NÃO ENCONTRADO!");
+                    }
                     break;
                     
-                case 6: 
+                case 5: 
                     System.out.println("***** ADICIONAR META DO ALUNO *****");
                     break;
                 
-                case 7: 
+                case 6: 
                     System.out.println("***** CADASTRAR PROFESSOR *****");
                     break;
                 
-                case 8:
-                    System.out.println("");
+                case 7:
+                    System.out.println("***** ALTERAR PROFESSOR *****");
+                    break;
                     
-                        
+                case 8:
+                    System.out.println("***** EXCLUIR PROFESSOR *****");
+                    break;
+                    
+                case 9:
+                    System.out.println("***** CRIAR TREINO *****");
+                    break;
+                    
+                case 10:
+                    System.out.println("***** ALTERAR TREINO *****");
+                    break;
+                  
+                case 11:
+                    System.out.println("***** EXCLUIR TREINO *****");
+                    break;
+                
+                case 12:
+                    System.out.println("***** ADICIONAR DADOS DE BIOIMPEDANCIA *****");
+                    break;
+                    
+                case 13:
+                    System.out.println("***** ALTERAR BIOIMPEDANCIA *****");
+                    break; 
+                    
+                case 14:
+                    System.out.println("***** MOSTRAR DADOS GERAIS DO ALUNO *****");
+                    break;
         }
 
-    }
+    }while (opcao != 0);
+   }
 
     private static void menu() {
         System.out.println("----- MENU -------");
@@ -78,5 +154,25 @@ public class Gestao {
         System.out.println("14 - Mostrar Dados Gerais do Aluno");
 
     }
-
+     private static Integer buscarAlunoById(List<Aluno> alunos)
+     {
+        Integer posicao = null;
+        System.out.println("Digite a id do aluno: ");
+        Integer idAluno = javain.nextInt();
+        javain.nextLine();
+       
+         for(int i=0; i<alunos.size(); i++)
+         {    
+             Aluno aluno = alunos.get(i);
+             
+             if (aluno.getId().equals(idAluno))
+             {
+                 posicao = i;
+                 break;
+             }
+             else {
+             }
+      }
+        return posicao;
+    }
 }
