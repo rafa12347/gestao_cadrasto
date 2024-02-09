@@ -12,8 +12,8 @@ import java.util.Date;
  */
 public class Pessoa {
     
-    private int id;
-    private String nome;
+    int id;
+    String nome;
     private Date nascimento;
     private String email;
     private String telefone;

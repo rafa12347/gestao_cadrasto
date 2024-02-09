@@ -1,4 +1,5 @@
 
+import Visao.AlunoVeew;
 import com.mycompany.modelo.Aluno;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,30 +33,19 @@ public class Gestao {
                     break;
                 
                 case 1:
-                   System.out.println("***** CADASTRO DE ALUNOS *****");
+                    
+                   AlunoVeew alunoveew = new AlunoVeew();
+                   alunoveew.cadastrar();
                    
-                   javain.nextLine();
-                   Aluno a = new Aluno();
-                   System.out.println("---- CADASTRO DE ALUNO ----");
-                   System.out.println("Digite o id do aluno: ");
-                   a.setId(javain.nextInt());
-                   a.setNome(javain.nextLine());
-                   System.out.println("Digite o nome do aluno: ");
-                   a.setNome(javain.nextLine());
-                   System.out.println("Digite o CPF");
-                   a.setCpf(javain.nextLine());
-                   alunos.add(a);
+                   //alunos.add(a);
                    break;
+                  
                    
                 case 2:
-                    System.out.println("***** LISTAR ALUNOS *****");
                     
-                    for (Aluno aluno : alunos) 
-                    {
-                        System.out.println("ID: " + aluno.getId());
-                        System.out.println("Nome: " + aluno.getNome());
-                        System.out.println("CPF: " + aluno.getCpf() + "\n");
-                    }  
+                    AlunoVeew alunovew = new AlunoVeew();
+                    alunovew.listar();
+                    
                     break;
                     
                 case 3:
@@ -78,19 +68,19 @@ public class Gestao {
                     }
                     break;
                 
-                case 4:
-                    System.out.println("***** EXCLUIR ALUNO *****");
-                    Integer posicao = buscarAlunoById(alunos);
-                    if(posicao!=null)
-                    {
-                        alunos.remove(alunos.get(posicao));
-                        System.out.println("ALUNO EXCLUÍDO COM SUCESSO!");
-                    }
-                    else
-                    {
-                        System.out.println("ALUNO NÃO ENCONTRADO!");
-                    }
-                    break;
+              //  case 4:
+                  //  System.out.println("***** EXCLUIR ALUNO *****");
+                    //Integer posicao = buscarAlunoById(alunos);
+                  //  if(posicao!=null)
+                   // {
+                    //    alunos.remove(alunos.get(posicao));
+                    //    System.out.println("ALUNO EXCLUÍDO COM SUCESSO!");
+                   // }
+                    //else
+                  //  {
+                    //    System.out.println("ALUNO NÃO ENCONTRADO!");
+                  //  }
+               //     break;
                     
                 case 5: 
                     System.out.println("***** ADICIONAR META DO ALUNO *****");
@@ -135,6 +125,7 @@ public class Gestao {
 
     }while (opcao != 0);
    }
+ 
 
     private static void menu() {
         System.out.println("----- MENU -------");
@@ -154,25 +145,27 @@ public class Gestao {
         System.out.println("14 - Mostrar Dados Gerais do Aluno");
 
     }
-     private static Integer buscarAlunoById(List<Aluno> alunos)
-     {
-        Integer posicao = null;
-        System.out.println("Digite a id do aluno: ");
-        Integer idAluno = javain.nextInt();
-        javain.nextLine();
-       
-         for(int i=0; i<alunos.size(); i++)
-         {    
-             Aluno aluno = alunos.get(i);
-             
-             if (aluno.getId().equals(idAluno))
-             {
-                 posicao = i;
-                 break;
-             }
-             else {
-             }
-      }
-        return posicao;
-    }
 }
+    
+    // private static Integer buscarAlunoById(List<Aluno> alunos)
+     //{
+     //   Integer posicao = null;
+       // System.out.println("Digite a id do aluno: ");
+       // Integer idAluno = javain.nextInt();
+       // javain.nextLine();
+       
+         //for(int i=0; i<alunos.size(); i++)
+         //{    
+             //Aluno aluno = alunos.get(i);
+             
+             //if (aluno.getId().equals(idAluno))
+            // {
+               //  posicao = i;
+                // break;
+            // }
+            // else {
+             //}
+     // }
+       // return posicao;
+   // }
+//}
